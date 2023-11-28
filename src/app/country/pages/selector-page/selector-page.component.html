@@ -1,0 +1,56 @@
+
+<div *ngIf="isLoading;else loadingTemplate">
+  Loading...{{isLoading ? 'loading...':'false'}}
+</div>
+<ng-template #loadingTemplate>
+  <h1 class="mt-3">Selectores Anidados</h1>
+
+  <hr>
+
+  <form action="" [formGroup]="myForm" >
+
+    <div class="row mb-3">
+      <div class="col">
+        <label for="" class="form-label">Continente:</label>
+        <select formControlName="region" name="" id="" class="form-control">
+          <option value="" disabled>Seleccione Continente</option>
+          <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+        </select>
+        <p class="text-danger" *ngIf="myForm.controls['region'].errors">Seleccione una opcion valida</p>
+      </div>
+    </div>
+    
+    <div class="row mb-3">
+      <div class="col">
+        <label for="" class="form-label">Pais:</label>
+        <select formControlName="region" name="" id="" class="form-control">
+          <option value="" disabled>Seleccione Continente</option>
+          <!-- <option *ngFor="let region of regions" [value]="region">{{region}}</option> -->
+        </select>
+        <p class="text-danger" *ngIf="myForm.controls['region'].errors">Seleccione un Pais</p>
+      </div>
+    </div>
+    <!-- <div class="row mb-3">
+      <div class="col">
+        <label for="" class="form-label">Continente:</label>
+        <select formControlName="region" name="" id="" class="form-control">
+          <option value="" disabled>Seleccione Continente</option>
+          <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+        </select>
+        <p class="text-danger" *ngIf="myForm.controls['region'].errors">Seleccione una opcion valida</p>
+      </div>
+    </div> -->
+  </form>
+
+
+  <h3>Formulario</h3>
+
+  <code>
+    {{myForm.value | json}}
+  </code>
+
+  <p>
+    is form valid: {{myForm.valid}}
+  </p>
+</ng-template>
+<p>{{isLoading? 'Loading': 'Aaaa false'}}</p>

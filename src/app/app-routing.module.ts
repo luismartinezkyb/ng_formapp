@@ -11,8 +11,13 @@ const routes: Routes = [
     loadChildren: ()=>import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
+    path:'selector',
+    loadChildren: ()=>import('./country/country.module').then(m => m.CountryModule)
+  },
+
+  {
     path:'**',
-    redirectTo: 'reactive'
+    redirectTo: 'selector'
   },
 ];
 
