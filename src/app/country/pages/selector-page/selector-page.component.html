@@ -25,7 +25,7 @@
         <label for="" class="form-label">Pais:</label>
         <select formControlName="region" name="" id="" class="form-control">
           <option value="" disabled>Seleccione Continente</option>
-          <!-- <option *ngFor="let region of regions" [value]="region">{{region}}</option> -->
+          <option *ngFor="let country of countriesByRegion" [value]="country">{{country.name}}</option>
         </select>
         <p class="text-danger" *ngIf="myForm.controls['region'].errors">Seleccione un Pais</p>
       </div>
