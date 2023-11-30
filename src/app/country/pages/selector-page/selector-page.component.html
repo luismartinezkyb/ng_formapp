@@ -20,26 +20,26 @@
       </div>
     </div>
     
-    <div class="row mb-3">
+    <div class="row mb-3" *ngIf="countriesByRegion.length>0">
       <div class="col">
         <label for="" class="form-label">Pais:</label>
-        <select formControlName="region" name="" id="" class="form-control">
-          <option value="" disabled>Seleccione Continente</option>
-          <option *ngFor="let country of countriesByRegion" [value]="country">{{country.name}}</option>
+        <select formControlName="country" name="" id="" class="form-control">
+          <option value="" disabled>Seleccione un país</option>
+          <option *ngFor="let country of countriesByRegion" [value]="country.cca3">{{country.name}}</option>
         </select>
-        <p class="text-danger" *ngIf="myForm.controls['region'].errors">Seleccione un Pais</p>
+        <p class="text-danger" *ngIf="myForm.controls['country'].errors">Seleccione un Pais</p>
       </div>
     </div>
-    <!-- <div class="row mb-3">
+    <div class="row mb-3" *ngIf="borders.length>0">
       <div class="col">
-        <label for="" class="form-label">Continente:</label>
-        <select formControlName="region" name="" id="" class="form-control">
-          <option value="" disabled>Seleccione Continente</option>
-          <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+        <label for="" class="form-label">Fronteras:</label>
+        <select formControlName="border" name="" id="" class="form-control">
+          <option value="" disabled>Seleccione la Frontera</option>
+          <option *ngFor="let border of borders" [value]="border.cca3">{{border.name}}</option>
         </select>
-        <p class="text-danger" *ngIf="myForm.controls['region'].errors">Seleccione una opcion valida</p>
+        <p class="text-danger" *ngIf="myForm.controls['border'].errors">Seleccione la frontera</p>
       </div>
-    </div> -->
+    </div>
   </form>
 
 
